@@ -1,0 +1,44 @@
+        ##Search Bar
+        <div class="input-wrapper">
+          <input type="search" name="search" placeholder="Search product" class="search-field">
+          <button class="search-submit" aria-label="search">
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+
+        ##WHISH LIST
+          <button class="header-action-btn" aria-label="favourite item">
+            <ion-icon name="star-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+            <span class="btn-badge">0</span>
+          </button>
+
+
+        # HASHING URLS
+        <script>
+          function displayHash() {
+            var theHash = window.location.hash;
+            if (theHash.length == 0) { theHash = "_index"; }
+            var elems = document.querySelectorAll("#caption");
+            elems[0].innerText = "Current Hash: " + theHash;
+            return true;
+          }
+
+          window.addEventListener("hashchange", function() {
+            console.log("hashchange event");
+            displayHash();
+          });
+
+          window.addEventListener("DOMContentLoaded", function(ev) {
+            console.log("DOMContentLoaded event");
+            displayHash();
+          });
+      </script>
+
+
+        # ABOUT US PAGE:
+        Santehtat - современная сеть магазинов бытовой и инженерной сантехники, успешно работающая с 2013 года. Обладаем
+        более чем десятилетним опытом и представлены в 7 крупных городах Казахстана, включая Астану, Алматы, Уральск,
+        Актобе, Атырау, Актау и Кандыагаш. Гордимся тем, что наша компания партнерствует с ведущими брендами, такими как
+        Pumpman, Unicorn, Haier. Высокое качество обслуживания и широкий ассортимент продукции - наш залог успешного
+        сотрудничества.

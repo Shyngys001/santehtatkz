@@ -1,13 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santehtat</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SantehTAT</title>
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="./assets/images/logo.png">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-3.jpg">
 </head>
-<body>
-    <h1>Santehtat.kz has started</h1>
-    <h1>Santehtat.kz в процессе создания</h1>
-    <h1>Santehtat.kz жасалу процесінде</h1>
+
+<body id="top">
+  <header class="header">
+    <div class="header-top" data-header>
+      <div class="container">
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+
+        <a href="/" class="logo">
+          <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
+        </a>
+
+        <div class="header-actions">
+          <button class="header-action-btn" aria-label="cart item">
+            <a href="cart.html">
+              <ion-icon name="cart-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+              <span class="btn-badge">0</span>
+            </a>
+          </button>
+        </div>
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li>
+              <a href="/" class="navbar-link has-after">Главная</a>
+            </li>
+            <li>
+              <a href="/products.html" class="navbar-link has-after">Товары</a>
+            </li>
+            <li>
+              <a href="/how-order.html" class="navbar-link has-after">Как заказать?</a>
+            </li>
+            <li>
+              <a href="/contact.html" class="navbar-link has-after">Магазины</a>
+            </li>
+            <li>
+              <a href="/about.html" class="navbar-link has-after">О Нас</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!--- #MOBILE NAVBAR-->
+  <div class="sidebar">
+    <div class="mobile-navbar" data-navbar>
+      <div class="wrapper">
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
+        </a>
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+      <ul class="navbar-list">
+        <li>
+          <a href="/" class="navbar-link" data-nav-link>Главная</a>
+        </li>
+        <li>
+          <a href="/products.html" class="navbar-link" data-nav-link>Товары</a>
+        </li>
+        <li>
+          <a href="/how-order.html" class="navbar-link" data-nav-link>Как заказать?</a>
+        </li>
+        <li>
+          <a href="/about.html" class="navbar-link" data-nav-link>О Нас</a>
+        </li>
+      </ul>
+    </div>
+    <div class="overlay" data-nav-toggler data-overlay></div>
+  </div>
+
+  <main>
+    <article>
+      <!--- #HERO -->
+      <section class="section hero" id="home" aria-label="hero" data-section>
+        <div class="container">
+          <ul class="has-scrollbar">
+            <li class="scrollbar-item">
+              <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-1.jpg')">
+
+                <div class="card-content">
+
+                  <h1 class="h1 hero-title">
+                    Поставка инженерной <br>
+                    сантехники
+                  </h1>
+
+                  <p class="hero-text">
+                    Предлагаем только качественные продукты от ведущих производителей.
+                  </p>
+
+                  <p class="price text-white">Начиная с 10000тг</p>
+
+                  <a href="catalog.html" class="btn btn-blue">Cмотреть каталог</a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-1.jpg')">
+
+                <div class="card-content">
+
+                  <h1 class="h1 hero-title">
+                    Поставка инженерной <br>
+                    сантехники
+                  </h1>
+
+                  <p class="hero-text">
+                    Предлагаем только качественные продукты от ведущих производителей.
+                  </p>
+
+                  <p class="price text-white">Начиная с 10000тг</p>
+
+                  <a href="catalog.html" class="btn btn-blue">Cмотреть каталог</a>
+
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!--- #COLLECTION -->
+      <section class="section collection" id="collection" aria-label="collection" data-section>
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Популярные категории</h2>
+            <a href="products.html" class="btn-link">
+              <span class="span">Листать каталог</span>
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+          <ul class="collection-list">
+            <li>
+              <div class="collection-card has-before hover:shine">
+                <h2 class="h2 card-title">Смесители</h2>
+                <p class="card-text">Начиная с 20 000₸</p>
+                <a href="catalog.html" class="btn-link">
+                  <span class="span">Купить сейчас</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+                <div class="has-bg-image" style="background-image: url('./assets/images/collection-1.jpg')"></div>
+              </div>
+            </li>
+            <li>
+              <div class="collection-card has-before hover:shine">
+                <h2 class="h2 card-title">Водонагреватели</h2>
+                <p class="card-text">Начиная с 100 000₸</p>
+                <a href="catalog.html" class="btn-link">
+                  <span class="span">Купить сейчас</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+                <div class="has-bg-image" style="background-image: url('./assets/images/collection-2.jpg')"></div>
+              </div>
+            </li>
+            <li>
+              <div class="collection-card has-before hover:shine">
+                <h2 class="h2 card-title">Фильтры</h2>
+                <p class="card-text">Начиная с 50 000₸</p>
+                <a href="catalog.html" class="btn-link">
+                  <span class="span">Купить сейчас</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+                <div class="has-bg-image" style="background-image: url('./assets/images/collection-3.jpg')"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!--- #SHOP -->
+      <section class="section shop" id="shop" aria-label="shop" data-section>
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Новинки</h2>
+            <a href="products.html" class="btn-link">
+              <span class="span">Показать все продукты</span>
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+          <!-- NEW PRODUCTS  -->
+          <ul class="has-scrollbar" id="new-products"></ul>
+        </div>
+      </section>
+
+      <section class="section shop" id="shop" aria-label="shop" data-section>
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Хиты продаж</h2>
+            <a href="#" class="btn-link">
+              <span class="span">Показать все продукты</span>
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+          <!-- Хиты продаж  -->
+          <ul class="has-scrollbar" id="best-sellers"></ul>
+        </div>
+      </section>
+
+      <!-- #BANNER -->
+      <section class="section banner" aria-label="banner" data-section>
+        <div class="container">
+          <ul class="banner-list">
+            <li>
+              <div class="banner-card banner-card-1 has-before hover:shine">
+                <h2 class="h2 card-subtitle">Широкий ассортимент</h2>
+                <a href="catalog.html" class="btn btn-blue">Cмотреть каталог</a>
+                <div class="has-bg-image blur" style="background-image: url('./assets/images/banner-1.jpg')"></div>
+              </div>
+            </li>
+            <li>
+              <div class="banner-card banner-card-2 has-before hover:shine">
+                <div class="has-bg-image" style="background-image: url('./assets/images/banner-2.jpg')"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!--- #FEATURE -->
+      <section class="section feature" aria-label="feature" data-section>
+        <div class="container">
+          <h2 class="h2-large section-title">Почему SantehTAT?</h2>
+          <ul class="flex-list">
+            <li class="flex-item">
+              <div class="feature-card">
+                <img src="./assets/images/feature-1.jpg" width="204" height="236" loading="lazy" alt="Guaranteed PURE"
+                  class="card-icon">
+                <h3 class="h3 card-title">Удобная доставка товаров</h3>
+                <p class="card-text">
+                  Мгновенная и отслеживаемая доставка <br> ваше время важно, и мы об этом помним. Надежность и
+                  точность в
+                  каждом заказе.
+                </p>
+
+              </div>
+            </li>
+            <li class="flex-item">
+              <div class="feature-card">
+                <img src="./assets/images/feature-2.jpg" width="204" height="236" loading="lazy"
+                  alt="Completely Cruelty-Free" class="card-icon">
+                <h3 class="h3 card-title">Превосходное качество</h3>
+                <p class="card-text">
+                  Гарантируем высшие стандарты. Надежные и долговечные решения для ваших потребностей.
+                </p>
+              </div>
+            </li>
+            <li class="flex-item">
+              <div class="feature-card">
+                <img src="./assets/images/feature-3.jpg" width="204" height="236" loading="lazy"
+                  alt="Ingredient Sourcing" class="card-icon">
+
+                <h3 class="h3 card-title">Широкий ассортимент товаров</h3>
+
+                <p class="card-text">
+                  От ремонта до дизайна, у нас все для вашей ванной. Качественные товары от ведущих производителей.
+                </p>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!--- #MORE -->
+      <section class="section blog" id="blog" aria-label="blog" data-section>
+        <div class="container">
+
+          <h2 class="h2-large section-title">Ещё...</h2>
+
+          <ul class="flex-list">
+            <li class="flex-item">
+              <div class="blog-card">
+                <figure class="card-banner img-holder has-before hover:shine" style="--width: 700; --height: 450;">
+                  <img src="./assets/images/blog-1.jpg" width="700" height="450" loading="lazy" alt="Find a Store"
+                    class="img-cover">
+                </figure>
+                <h3 class="h3">
+                  <a href="catalog.html" class="card-title">Насосы</a>
+                </h3>
+                <a href="#" class="btn-link">
+                  <span class="span">Купить сейчас</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+
+            <li class="flex-item">
+              <div class="blog-card">
+                <figure class="card-banner img-holder has-before hover:shine" style="--width: 700; --height: 450;">
+                  <img src="./assets/images/blog-2.jpg" width="700" height="450" loading="lazy" alt="From Our Blog"
+                    class="img-cover">
+                </figure>
+                <h3 class="h3">
+                  <a href="catalog.html" class="card-title">Счетчики</a>
+                </h3>
+                <a href="#" class="btn-link">
+                  <span class="span">Купить сейчас</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li class="flex-item">
+              <div class="blog-card">
+                <figure class="card-banner img-holder has-before hover:shine" style="--width: 700; --height: 450;">
+                  <img src="./assets/images/blog-3.jpg" width="700" height="450" loading="lazy" alt="Our Story"
+                    class="img-cover">
+                </figure>
+                <h3 class="h3">
+                  <a href="#" class="card-title">Катриджи</a>
+                </h3>
+                <a href="catalog.html" class="btn-link">
+                  <span class="span">Купить сейчас</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!--- #FOOTER -->
+  <footer class="footer" data-section>
+    <div class="container">
+      <div class="footer-top">
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Company</p>
+          </li>
+          <li>
+            <p class="footer-list-text">
+              Найдите ближайший к вам магазин. <a href="#" class="link">Посмотреть наши магазины.</a>
+            </p>
+          </li>
+          <li>
+            <p class="footer-list-text bold">+7 771 731 28 48</p>
+          </li>
+          <li>
+            <p class="footer-list-text">info@santehtat.kz</p>
+          </li>
+        </ul>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Useful links</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Главная</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Как заказать?</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">О компании</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Контакты</a>
+          </li>
+        </ul>
+
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Infomation</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Доставка</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Оплата</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">FAQ</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Terms & Conditions</a>
+          </li>
+        </ul>
+
+        <div class="footer-list">
+          <p class="newsletter-title">Good emails.</p>
+          <p class="newsletter-text">
+            Введите свой адрес электронной почты ниже, чтобы быть первым, кто узнает о новых коллекциях и запусках
+            продуктов.
+          </p>
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Enter your email address" required
+              class="email-field">
+
+            <button type="submit" class="btn btn-blue">Подписаться</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.png" width="179" height="26" loading="lazy" alt="Glowing">
+        </a>
+        <div class="wrapper">
+          <p class="copyright">
+            &copy; 2023 mutasim
+          </p>
+          <ul class="social-list">
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!--- #BACK TO TOP -->
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!--- Custom JS link-->
+  <script type="module" src="./assets/js/script.js" async></script>
+  <!--Ionicon link-->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
