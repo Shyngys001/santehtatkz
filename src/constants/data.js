@@ -8,6 +8,7 @@ export const products = [
         hasDiscount: true,
         isNew: true,
         bestseller: false,
+        category: 'Краны'
     },
     {
         id: 2,
@@ -18,6 +19,7 @@ export const products = [
         hasDiscount: false,
         isNew: true,
         bestseller: true,
+        category: 'Смесители'
     },
     {
         id: 3,
@@ -28,7 +30,7 @@ export const products = [
         hasDiscount: true,
         isNew: true,
         bestseller: true,
-
+        category: 'ТехноИнструмент'
     },
     {
         id: 4,
@@ -39,6 +41,7 @@ export const products = [
         hasDiscount: false,
         isNew: true,
         bestseller: true,
+        category: 'ТехноИнструмент'
 
     },
     {
@@ -50,6 +53,7 @@ export const products = [
         hasDiscount: false,
         isNew: true,
         bestseller: false,
+        category: 'Фильтра'
     },
     {
         id: 6,
@@ -60,6 +64,7 @@ export const products = [
         hasDiscount: true,
         isNew: true,
         bestseller: false,
+        category: 'Трапы'
     },
     {
         id: 7,
@@ -70,6 +75,18 @@ export const products = [
         hasDiscount: false,
         isNew: false,
         bestseller: true,
+        category: 'Трапы'
+    },
+    {
+        id: 7,
+        name: 'Трап 2',
+        price: '17 000',
+        unit: 'шт',
+        image: './assets/images/products/image-7.jpeg',
+        hasDiscount: false,
+        isNew: false,
+        bestseller: true,
+        category: 'Трапы'
     },
     {
         id: 8,
@@ -80,6 +97,7 @@ export const products = [
         hasDiscount: true,
         isNew: false,
         bestseller: true,
+        category: 'Радиаторы'
     },
     {
         id: 8,
@@ -90,5 +108,22 @@ export const products = [
         hasDiscount: true,
         isNew: false,
         bestseller: true,
+        category: 'Фитинги'
     },
-]
+];
+
+//! Actual Data will be added here;
+export const data = [
+    {
+        productName: "Regular White T-Shirt",
+        category: "Topwear",
+        price: "30",
+        image: "white-tshirt.jpg",
+    },
+    {
+        productName: "Beige Short Skirt",
+        category: "Bottomwear",
+        price: "49",
+        image: "short-skirt.jpg",
+    },
+];

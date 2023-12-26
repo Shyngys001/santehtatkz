@@ -8,6 +8,7 @@
     <title>SantehTAT</title>
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./src/components/Products/Products.css">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
                     <span class="line line-3"></span>
                 </button>
 
-                <a href="/" class="logo">
+                <a href="index.html" class="logo">
                     <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
                 </a>
 
@@ -85,7 +86,20 @@
     </div>
 
     <h1 class="text-center">Товары</h1>
+    <div class="container">
+        <div class="filter-container">
+            <input type="text" class="search-input" placeholder="Поиск по товарам">
+            <div class="categories">
+                <button class="btn active">Все</button>
+            </div>
+        </div>
 
+        <!-- Products Container  -->
+        <div class="product-container"></div>
+    </div>
+
+    <script src="./assets/js/common.js"></script>
+    <script type="module" src="./src/components/Products/Products.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
