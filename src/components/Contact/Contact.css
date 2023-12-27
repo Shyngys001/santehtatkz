@@ -1,0 +1,48 @@
+.contact-page{
+    h1 {
+        font-size: 2em;
+    }
+    
+    span{
+        display: inline-block;
+        color: var(--primary-color);
+    }
+
+    > p{
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-cards {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+        .card {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            padding: 30px 20px;
+
+            .text-blue {
+                font-weight: 600;
+                color: var(--primary-color);
+            }
+
+            .text-blue + p{
+                color: #000;
+            }
+        }
+    }
+
+    .city {
+    }
+    .address {
+    }
+    .phone {
+    }
+}
+
