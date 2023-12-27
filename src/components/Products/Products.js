@@ -1,6 +1,6 @@
 import { products } from "../../constants/data.js";
+import { sleep } from "../../utils/index.js";
 
-const searchInput = document.querySelector('.search-input');
 const productCards = document.querySelector('.product-container');
 const categories = document.querySelector('.categories');
 
@@ -48,12 +48,47 @@ function filterProduct(value) {
 
 categories.addEventListener('click', (evt) => {
     const clickedButton = evt.target;
+    const noItemFoundMessage = document.querySelector('#noItemFoundMessage');
 
     if (clickedButton.classList.contains('btn')) {
         const buttons = document.querySelectorAll('.btn');
         buttons.forEach(btn => btn.classList.remove('active'));
+        noItemFoundMessage.style.display = 'none';
 
         clickedButton.classList.add('active');
         filterProduct(clickedButton.innerText);
     }
 });
+
+//? Seach Item;
+async function searchFirter() {
+    const searchInputValue = document.querySelector('.search-input')?.value.toLowerCase();
+    const noItemFoundMessage = document.querySelector('#noItemFoundMessage');
+    // const spinner = document.querySelector('#spinner');
+
+    if (searchInputValue.length < 1) {
+        return;
+    }
+
+    const products = document.querySelectorAll('.product-card');
+    let itemFound = false;
+
+    for (const element of products) {
+        const productToLowerCase = element.innerText.toLowerCase();
+        if (productToLowerCase.includes(searchInputValue)) {
+            element.classList.remove('hide');
+            itemFound = true;
+        } else {
+            element.classList.add('hide');
+        }
+    }
+
+    if (!itemFound) {
+        noItemFoundMessage.style.display = 'block';
+    } else {
+        noItemFoundMessage.style.display = 'none';
+    }
+}
+
+const searchInput = document.querySelector('.search-input');
+searchInput.addEventListener('input', searchFirter)
