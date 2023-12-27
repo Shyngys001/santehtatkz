@@ -8,6 +8,7 @@
     <title>Магазины | SantehTAT</title>
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./src/components/Contact/Contact.css">
 </head>
 
 <body>
@@ -56,8 +57,83 @@
         </div>
     </header>
 
-    <h1 class="text-center">Магазины</h1>
+    <!--- #MOBILE NAVBAR-->
+    <div class="sidebar">
+        <div class="mobile-navbar" data-navbar>
+            <div class="wrapper">
+                <a href="#" class="logo">
+                    <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
+                </a>
+                <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                    <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+            </div>
+            <ul class="navbar-list">
+                <li>
+                    <a href="/" class="navbar-link" data-nav-link>Главная</a>
+                </li>
+                <li>
+                    <a href="/products.html" class="navbar-link" data-nav-link>Товары</a>
+                </li>
+                <li>
+                    <a href="/how-order.html" class="navbar-link" data-nav-link>Как заказать?</a>
+                </li>
+                <li>
+                    <a href="/about.html" class="navbar-link" data-nav-link>О Нас</a>
+                </li>
+            </ul>
+        </div>
+        <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
 
+    <section class="container contact-page">
+        <h1 class="text-center">Наши <span>магазины</span></h1>
+        <p>
+            Сеть магазинов 'SnatehTAT' присутствует в каждом крупном городе Казахстана,
+            непрерывно расширяя свое присутствие и предлагая высококачественные товары для вашего комфорта.
+        </p>
+
+        <div class="contact-cards">
+            <div class="card">
+                <div class="city">
+                    <p class="text-blue">Город</p>
+                    <p>Астана</p>
+                </div>
+                <div class="address">
+                    <p class="text-blue">Адрес</p>
+                    <p>ул. Ж. Тархана 14</p>
+                </div>
+                <div class="phone">
+                    <p class="text-blue">Контакты</p>
+                    <p>+7 701 101 2525</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="city">
+                    <p class="text-blue">Город</p>
+                    <p>Астана</p>
+                </div>
+                <div class="address">
+                    <p class="text-blue">Адрес</p>
+                    <p>ул. Ж. Тархана 14</p>
+                </div>
+                <div class="phone">
+                    <p class="text-blue">Контакты</p>
+                    <p>+7 701 101 2525</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--- #BACK TO TOP -->
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <script type="module" src="./assets/js/common.js"></script>
+    <script src="./src/components/Contact/Contact.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
