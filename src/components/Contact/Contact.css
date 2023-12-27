@@ -22,6 +22,7 @@
         
         .card {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             border: 1px solid #ccc;
             border-radius: 7px;
@@ -38,11 +39,29 @@
         }
     }
 
-    .city {
+    .city, .address, .phone {
+        > p:first-child{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        ion-icon{
+            display: inline-block;
+        }
+
+        > a {
+            cursor: pointer;
+            text-decoration: underline var(--primary-color);
+        }
     }
-    .address {
-    }
-    .phone {
+
+    @media only screen and (max-width: 768px) {
+        .card {
+            gap: 20px;
+        }
+        .address{
+            order: 1;
+        }
     }
 }
 
