@@ -27,7 +27,7 @@
             border: 1px solid #ccc;
             border-radius: 7px;
             padding: 30px 20px;
-
+            box-shadow: -1px 1px 7px #ccc;
             .text-blue {
                 font-weight: 600;
                 color: var(--primary-color);
