@@ -13,7 +13,7 @@ export const products = [
     {
         id: 2,
         name: 'Смесители для ванн',
-        price: '45 480',
+        price: '45480',
         unit: 'шт',
         image: './assets/images/products/image-2.jpeg',
         hasDiscount: false,
