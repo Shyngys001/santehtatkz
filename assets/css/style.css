@@ -1391,3 +1391,7 @@ body {
   .offer .container { gap: 120px; }
 
 }
+
+.flex{
+  display: flex;
+}

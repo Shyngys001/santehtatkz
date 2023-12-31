@@ -8,6 +8,7 @@
     <title>SantehTAT</title>
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./src/components/Cart/Cart.css">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
                     <span class="line line-3"></span>
                 </button>
 
-                <a href="/" class="logo">
+                <a href="index.html" class="logo">
                     <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
                 </a>
 
@@ -56,8 +57,60 @@
         </div>
     </header>
 
-    <h1 class="text-center">Cart Page</h1>
+    <!--- #MOBILE NAVBAR-->
+    <div class="sidebar">
+        <div class="mobile-navbar" data-navbar>
+            <div class="wrapper">
+                <a href="#" class="logo">
+                    <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
+                </a>
+                <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                    <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+            </div>
+            <ul class="navbar-list">
+                <li>
+                    <a href="index.html" class="navbar-link" data-nav-link>Главная</a>
+                </li>
+                <li>
+                    <a href="products.html" class="navbar-link" data-nav-link>Товары</a>
+                </li>
+                <li>
+                    <a href="how-order.html" class="navbar-link" data-nav-link>Как заказать?</a>
+                </li>
+                <li>
+                    <a href="contact.html" class="navbar-link" data-nav-link>Магазины</a>
+                </li>
+                <li>
+                    <a href="about.html" class="navbar-link" data-nav-link>О Нас</a>
+                </li>
+            </ul>
+        </div>
+        <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
 
+    <div class="container">
+
+        <h1 class="text-center">Корзина</h1>
+
+        <div class="cart-container">
+            <div class="cart-left-side">
+                <h3 class="cart-left-side-header">Корзина <sup>2</sup></h3>
+                <div class="cart-items"></div>
+            </div>
+            <div class="cart-right-side"></div>
+
+        </div>
+    </div>
+
+
+    <!--- #BACK TO TOP -->
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <script src="./assets/js/common.js"></script>
+    <script type="module" src="./src/components/Cart/Cart.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
