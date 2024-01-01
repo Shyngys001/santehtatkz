@@ -95,6 +95,10 @@
                 ion-icon {
                     color: var(--white);
                 }
+
+                &:hover{
+                    background-color: var(--primary-color-hover);
+                }
             }
 
             .product-details-bottom{

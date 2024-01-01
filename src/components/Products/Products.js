@@ -1,20 +1,21 @@
 import { products } from "../../constants/data.js";
-import { sleep } from "../../utils/index.js";
 
 const productCards = document.querySelector('.product-container');
 const categories = document.querySelector('.categories');
 
 //! Create cards;
-for (const product of products) {
-    productCards.innerHTML += `
+function showProductsList() {
+
+    for (const product of products) {
+        productCards.innerHTML += `
         <div class="product-card" data-category="${product.category}">
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-details">
                 <h3 class="product-name">${product.name}</h3>
                 <div class="product-details-bottom">
                     <p class="product-price">${product.price}₸ (шт.)</p>
-                    <div class="cart-icon">
-                        <button class="action-btn" aria-label="add to cart">
+                    <div class="cart-icon" data-id="${product.id}">
+                        <button class="action-btn add-to-cart-btn" aria-label="add to cart">
                             <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
                         </button>
                     </div>
@@ -22,7 +23,16 @@ for (const product of products) {
             </div>
         </div>
     `
+    }
+
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
 }
+
+showProductsList();
 
 //! Create Categories;
 const allCategories = [...new Set(products.map((product) => product.category))];
@@ -92,3 +102,27 @@ async function searchFirter() {
 
 const searchInput = document.querySelector('.search-input');
 searchInput.addEventListener('input', searchFirter)
+
+
+function addToCart(event) {
+    const productId = event.currentTarget.closest('.cart-icon').dataset.id;
+
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (!cartData.includes(productId)) {
+        cartData.push(productId);
+        localStorage.setItem('cart', JSON.stringify(cartData));
+
+        Toastify({
+            text: '✅ Товар добавлен в корзину',
+            className: 'info',
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                'border-radius': '7px',
+                width: '210px'
+            }
+        }).showToast();
+    } else {
+        return;
+    }
+}
