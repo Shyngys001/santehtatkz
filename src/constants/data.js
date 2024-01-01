@@ -24,7 +24,7 @@ export const products = [
     {
         id: 3,
         name: 'Шуруповерты',
-        price: '48 100',
+        price: '48100',
         unit: 'шт',
         image: './assets/images/products/image-3.jpeg',
         hasDiscount: true,
@@ -35,7 +35,7 @@ export const products = [
     {
         id: 4,
         name: 'Перфораторы',
-        price: '64 123',
+        price: '64123',
         unit: 'шт',
         image: './assets/images/products/image-4.jpeg',
         hasDiscount: false,
@@ -47,7 +47,7 @@ export const products = [
     {
         id: 5,
         name: 'Фильтра для воды',
-        price: '72 999',
+        price: '72999',
         unit: 'шт',
         image: './assets/images/products/image-5.jpeg',
         hasDiscount: false,
@@ -58,7 +58,7 @@ export const products = [
     {
         id: 6,
         name: 'Газовый ключ',
-        price: '10 000',
+        price: '10000',
         unit: 'шт',
         image: './assets/images/products/image-6.jpeg',
         hasDiscount: true,
@@ -69,7 +69,7 @@ export const products = [
     {
         id: 7,
         name: 'Трап',
-        price: '15 000',
+        price: '15000',
         unit: 'шт',
         image: './assets/images/products/image-7.jpeg',
         hasDiscount: false,
@@ -80,7 +80,7 @@ export const products = [
     {
         id: 7,
         name: 'Трап 2',
-        price: '17 000',
+        price: '17000',
         unit: 'шт',
         image: './assets/images/products/image-7.jpeg',
         hasDiscount: false,
@@ -91,7 +91,7 @@ export const products = [
     {
         id: 8,
         name: 'Алюминиевые радиаторы',
-        price: '45 400',
+        price: '45400',
         unit: 'шт',
         image: './assets/images/products/image-8.jpeg',
         hasDiscount: true,

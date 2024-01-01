@@ -4,18 +4,16 @@ import { isEmptyArray, getTotalPrice, useCounter, currencyFormat } from "../../u
 const cartItems = document.querySelector('.cart-items');
 const cartContainer = document.querySelector('.cart-container');
 
-const localStorageIDs = [1, 2, 3]; // Make it getter function from localStorage; -> which returns array of ID's; 
-const id = 2;
-const filteredProduct = products.filter((product) => product.id === id);
+const cartProductIDs = getLocalStorageIDs();
+const cartProducts = products.filter(product => cartProductIDs.includes(String(product.id)));
 
 function showCartProducts() {
-    if (isEmptyArray(filteredProduct)) {
+    if (isEmptyArray(cartProducts)) {
         cartContainer.innerHTML = 'Opps, Your Cart Is Empty'
         return;
     }
 
-
-    for (const product of filteredProduct) {
+    for (const product of cartProducts) {
         cartItems.innerHTML += `
             <div class="cart-item">
                 <img src="${product.image}" alt="${product.name}">
@@ -41,23 +39,28 @@ function showCartProducts() {
 
 function showCartTotal() {
     const cartRightSide = document.querySelector('.cart-right-side');
-    const totalPrice = getTotalPrice(filteredProduct); // Get money with a formatter;
-    const totalProducts = filteredProduct.length;
+    const totalPrice = getTotalPrice(cartProducts); // Get money with a formatter;
+    const totalProducts = cartProducts.length;
 
     cartRightSide.innerHTML = `
         <div class="flex">
             <span>Товары, ${totalProducts} шт.</span>
-            <span>${totalPrice} ₸</span>
+            <span>${currencyFormat(totalPrice)} ₸</span>
         </div>
         <div class="flex">
             <span>Итого</span>
-            <span>${totalPrice} ₸</span>
+            <span>${currencyFormat(totalPrice)} ₸</span>
         </div>
         <button>Заказать</button>
     `
 }
 
 showCartProducts();
+
+function getLocalStorageIDs() {
+    const cartIDs = JSON.parse(localStorage.getItem('cart')) || [];
+    return cartIDs;
+}
 
 /* 
 Gonna Store ID of products on localStorage; 
