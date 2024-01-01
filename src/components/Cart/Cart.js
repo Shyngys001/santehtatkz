@@ -1,5 +1,5 @@
 import { products } from "../../constants/data.js";
-import { isEmptyArray, getTotalPrice } from "../../utils/index.js";
+import { isEmptyArray, getTotalPrice, useCounter, currencyFormat } from "../../utils/index.js";
 
 const cartItems = document.querySelector('.cart-items');
 const cartContainer = document.querySelector('.cart-container');
@@ -8,14 +8,12 @@ const localStorageIDs = [1, 2, 3]; // Make it getter function from localStorage;
 const id = 2;
 const filteredProduct = products.filter((product) => product.id === id);
 
-console.log(filteredProduct);
-
 function showCartProducts() {
-
     if (isEmptyArray(filteredProduct)) {
         cartContainer.innerHTML = 'Opps, Your Cart Is Empty'
         return;
     }
+
 
     for (const product of filteredProduct) {
         cartItems.innerHTML += `
@@ -23,14 +21,20 @@ function showCartProducts() {
                 <img src="${product.image}" alt="${product.name}">
                 <div class="title">${product.name}</div>
                 <div class="quantity">
-                    <button class="qty-inc">-</button>
-                    <span class="">${1}</span>
-                    <button class="qty-dec">+</button>
+                    <button class="qty-dec">-</button>
+                    <span>${1}</span>
+                    <button class="qty-inc">+</button>
                 </div>
-                <div class="price">${product.price} ₸</div>
+                <div class="price" data-initial-price="${product.price}">${currencyFormat(product.price)}</div>
             </div>
         `
     }
+
+    const quantityButtons = document.querySelectorAll('.quantity button');
+
+    quantityButtons.forEach(button => {
+        button.addEventListener('click', () => useCounter(button));
+    });
 
     showCartTotal();
 }
@@ -39,7 +43,6 @@ function showCartTotal() {
     const cartRightSide = document.querySelector('.cart-right-side');
     const totalPrice = getTotalPrice(filteredProduct); // Get money with a formatter;
     const totalProducts = filteredProduct.length;
-    console.log(totalPrice);
 
     cartRightSide.innerHTML = `
         <div class="flex">
@@ -54,9 +57,7 @@ function showCartTotal() {
     `
 }
 
-showCartProducts()
-
-
+showCartProducts();
 
 /* 
 Gonna Store ID of products on localStorage; 
