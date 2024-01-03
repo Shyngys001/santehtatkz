@@ -116,13 +116,25 @@ function addToCart(event) {
         Toastify({
             text: '✅ Товар добавлен в корзину',
             className: 'info',
+            gravity: "top",
+            position: "center",
             style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                background: "#fff",
+                color: '#000',
                 'border-radius': '7px',
-                width: '210px'
+                width: '300px'
             }
         }).showToast();
+
+        showCartCounter();
     } else {
         return;
     }
+}
+
+function showCartCounter() {
+    const cartIDs = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCounter = document.querySelector('.btn-badge');
+
+    cartCounter.innerText = cartIDs.length;
 }

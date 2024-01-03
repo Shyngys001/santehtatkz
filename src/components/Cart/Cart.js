@@ -1,11 +1,16 @@
 import { products } from "../../constants/data.js";
-import { isEmptyArray, getTotalPrice, useCounter, currencyFormat } from "../../utils/index.js";
+import {
+    isEmptyArray,
+    getTotalPrice,
+    getTotalQuantity,
+    currencyFormat,
+} from "../../utils/index.js";
 
 const cartItems = document.querySelector('.cart-items');
 const cartContainer = document.querySelector('.cart-container');
 
 const cartProductIDs = getLocalStorageIDs();
-const cartProducts = products.filter(product => cartProductIDs.includes(String(product.id)));
+let cartProducts = products.filter(product => cartProductIDs.includes(String(product.id)));
 
 function showCartProducts() {
     if (isEmptyArray(cartProducts)) {
@@ -15,7 +20,7 @@ function showCartProducts() {
 
     for (const product of cartProducts) {
         cartItems.innerHTML += `
-            <div class="cart-item">
+            <div class="cart-item" data-id="${product.id}">
                 <img src="${product.image}" alt="${product.name}">
                 <div class="title">${product.name}</div>
                 <div class="quantity">
@@ -37,10 +42,13 @@ function showCartProducts() {
     showCartTotal();
 }
 
+showCartProducts();
+
+
 function showCartTotal() {
     const cartRightSide = document.querySelector('.cart-right-side');
-    const totalPrice = getTotalPrice(cartProducts); // Get money with a formatter;
-    const totalProducts = cartProducts.length;
+    const totalPrice = getTotalPrice(cartProducts);
+    const totalProducts = getTotalQuantity(cartProducts);
 
     cartRightSide.innerHTML = `
         <div class="flex">
@@ -52,10 +60,48 @@ function showCartTotal() {
             <span>${currencyFormat(totalPrice)} ₸</span>
         </div>
         <button>Заказать</button>
-    `
+    `;
 }
 
-showCartProducts();
+function useCounter(button) {
+    const quantityElement = button.parentElement.querySelector('span');
+    let currentQuantity = parseInt(quantityElement.textContent, 10);
+
+    if (button.classList.contains('qty-inc')) {
+        currentQuantity++;
+    } else if (button.classList.contains('qty-dec') && currentQuantity > 1) {
+        currentQuantity--;
+    }
+
+    quantityElement.textContent = currentQuantity;
+
+    // Find the closest parent .cart-item and get the product ID
+    const cartItem = button.closest('.cart-item');
+    const productId = cartItem.dataset.id;
+
+    const priceElement = cartItem.querySelector('.price');
+    const initialPrice = parseFloat(priceElement.dataset.initialPrice);
+    const updatedPrice = (currentQuantity * initialPrice).toFixed(2);
+
+    priceElement.textContent = currencyFormat(updatedPrice);
+
+    // Update the cartProducts array with the new quantity
+    const updatedCartProducts = cartProducts.map(product => {
+        if (product.id === +productId) {
+            return {
+                ...product,
+                quantity: currentQuantity,
+            };
+        }
+        return product;
+    });
+
+    console.log(updatedCartProducts);
+    cartProducts = updatedCartProducts;
+
+    // Update the total display
+    showCartTotal();
+}
 
 function getLocalStorageIDs() {
     const cartIDs = JSON.parse(localStorage.getItem('cart')) || [];
