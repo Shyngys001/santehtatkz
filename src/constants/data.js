@@ -8,6 +8,7 @@ export const products = [
         hasDiscount: true,
         isNew: true,
         bestseller: false,
+        quantity: 1,
         category: 'Краны'
     },
     {
@@ -19,6 +20,7 @@ export const products = [
         hasDiscount: false,
         isNew: true,
         bestseller: true,
+        quantity: 1,
         category: 'Смесители'
     },
     {
@@ -30,6 +32,7 @@ export const products = [
         hasDiscount: true,
         isNew: true,
         bestseller: true,
+        quantity: 1,
         category: 'ТехноИнструмент'
     },
     {
@@ -41,6 +44,7 @@ export const products = [
         hasDiscount: false,
         isNew: true,
         bestseller: true,
+        quantity: 1,
         category: 'ТехноИнструмент'
 
     },
@@ -53,6 +57,7 @@ export const products = [
         hasDiscount: false,
         isNew: true,
         bestseller: false,
+        quantity: 1,
         category: 'Фильтра'
     },
     {
@@ -64,6 +69,7 @@ export const products = [
         hasDiscount: true,
         isNew: true,
         bestseller: false,
+        quantity: 1,
         category: 'Трапы'
     },
     {
@@ -75,6 +81,7 @@ export const products = [
         hasDiscount: false,
         isNew: false,
         bestseller: true,
+        quantity: 1,
         category: 'Трапы'
     },
     {
@@ -86,6 +93,7 @@ export const products = [
         hasDiscount: false,
         isNew: false,
         bestseller: true,
+        quantity: 1,
         category: 'Трапы'
     },
     {
@@ -97,6 +105,7 @@ export const products = [
         hasDiscount: true,
         isNew: false,
         bestseller: true,
+        quantity: 1,
         category: 'Радиаторы'
     },
     {
@@ -108,6 +117,7 @@ export const products = [
         hasDiscount: true,
         isNew: false,
         bestseller: true,
+        quantity: 1,
         category: 'Фитинги'
     },
 ];
