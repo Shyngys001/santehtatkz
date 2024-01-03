@@ -60,3 +60,13 @@ const headerSticky = () => {
 }
 
 addEventOnElem(window, "scroll", headerSticky);
+
+
+function showCartItems() {
+  const cartIDs = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartCounter = document.querySelector('.btn-badge');
+
+  cartCounter.innerText = cartIDs.length;
+}
+
+showCartItems();
