@@ -1,68 +1,74 @@
-.contact-page{
+.contact-page {
     margin-bottom: 3em;
-    h1 {
-        font-size: 2em;
-    }
-    
-    span{
-        display: inline-block;
-        color: var(--primary-color);
-    }
-
-    > p{
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .contact-cards {
-        margin-top: 2em;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        
-        .card {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            border: 1px solid #ccc;
-            border-radius: 7px;
-            padding: 30px 20px;
-            box-shadow: -1px 1px 7px #ccc;
-            .text-blue {
-                font-weight: 600;
-                color: var(--primary-color);
-            }
-
-            .text-blue + p{
-                color: #000;
-            }
-        }
-    }
-
-    .city, .address, .phone {
-        > p:first-child{
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        ion-icon{
-            display: inline-block;
-        }
-
-        > a {
-            cursor: pointer;
-            text-decoration: underline var(--primary-color);
-        }
-    }
-
-    @media only screen and (max-width: 768px) {
-        .card {
-            gap: 20px;
-        }
-        .address{
-            order: 1;
-        }
-    }
 }
 
+.contact-page h1 {
+    font-size: 2em;
+}
+
+.contact-page span {
+    display: inline-block;
+    color: var(--primary-color);
+}
+
+.contact-page > p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-page .contact-cards {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-page .contact-cards .card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 30px 20px;
+    box-shadow: -1px 1px 7px #ccc;
+}
+
+.contact-page .contact-cards .card .text-blue {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.contact-page .contact-cards .card .text-blue + p {
+    color: #000;
+}
+
+.contact-page .city > p:first-child,
+.contact-page .address > p:first-child,
+.contact-page .phone > p:first-child {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-page .city ion-icon,
+.contact-page .address ion-icon,
+.contact-page .phone ion-icon {
+    display: inline-block;
+}
+
+.contact-page .city > a,
+.contact-page .address > a,
+.contact-page .phone > a {
+    cursor: pointer;
+    text-decoration: underline var(--primary-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-page .contact-cards .card {
+        gap: 20px;
+    }
+    .contact-page .address {
+        order: 1;
+    }
+}
