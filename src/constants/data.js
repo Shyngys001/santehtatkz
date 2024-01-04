@@ -85,7 +85,7 @@ export const products = [
         category: 'Трапы'
     },
     {
-        id: 7,
+        id: 8,
         name: 'Трап 2',
         price: '17000',
         unit: 'шт',
@@ -97,7 +97,7 @@ export const products = [
         category: 'Трапы'
     },
     {
-        id: 8,
+        id: 9,
         name: 'Алюминиевые радиаторы',
         price: '45400',
         unit: 'шт',
@@ -109,7 +109,7 @@ export const products = [
         category: 'Радиаторы'
     },
     {
-        id: 8,
+        id: 10,
         name: 'Резьбовые фитинги',
         price: '500',
         unit: 'шт',
