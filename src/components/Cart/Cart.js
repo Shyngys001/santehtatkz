@@ -1,4 +1,3 @@
-import { products } from "../../constants/data.js";
 import {
     isEmptyArray,
     getTotalPrice,
@@ -8,15 +7,23 @@ import {
 
 const cartItems = document.querySelector('.cart-items');
 const cartContainer = document.querySelector('.cart-container');
+let cartProducts = null;
 
-const cartProductIDs = getLocalStorageIDs();
-let cartProducts = products.filter(product => cartProductIDs.includes(String(product.id)));
+loadCartData();
+
+function loadCartData() {
+    cartProducts = getCartData();
+    showCartProducts();
+    showCartTotal();
+}
 
 function showCartProducts() {
     if (isEmptyArray(cartProducts)) {
         cartContainer.innerHTML = 'Opps, Your Cart Is Empty'
         return;
     }
+
+    cartItems.innerHTML = '';
 
     for (const product of cartProducts) {
         cartItems.innerHTML += `
@@ -25,30 +32,42 @@ function showCartProducts() {
                 <div class="title">${product.name}</div>
                 <div class="quantity">
                     <button class="qty-dec">-</button>
-                    <span>${1}</span>
+                    <span>${product.quantity}</span>
                     <button class="qty-inc">+</button>
                 </div>
-                <div class="price" data-initial-price="${product.price}">${currencyFormat(product.price)}</div>
+                <div class="price-container">
+                    <div class="price" data-initial-price="${product.price}">${currencyFormat(product.price * product.quantity)}</div>
+                    <button class="cart-remove-btn">
+                        <ion-icon name="trash" aria-hidden="true" aria-hidden="true"></ion-icon>
+                    </button>
+                </div>
             </div>
         `
     }
 
+    // Add Listener for Quantity Buttons
     const quantityButtons = document.querySelectorAll('.quantity button');
-
     quantityButtons.forEach(button => {
         button.addEventListener('click', () => useCounter(button));
+    });
+
+    // Add Listener for Delete Buttons
+    const deleteButtons = document.querySelectorAll('.cart-remove-btn');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', deleteCartItem);
     });
 
     showCartTotal();
 }
 
-showCartProducts();
-
-
 function showCartTotal() {
     const cartRightSide = document.querySelector('.cart-right-side');
     const totalPrice = getTotalPrice(cartProducts);
     const totalProducts = getTotalQuantity(cartProducts);
+
+    if (isEmptyArray(cartProducts)) {
+        return;
+    }
 
     cartRightSide.innerHTML = `
         <div class="flex">
@@ -75,7 +94,6 @@ function useCounter(button) {
 
     quantityElement.textContent = currentQuantity;
 
-    // Find the closest parent .cart-item and get the product ID
     const cartItem = button.closest('.cart-item');
     const productId = cartItem.dataset.id;
 
@@ -85,33 +103,42 @@ function useCounter(button) {
 
     priceElement.textContent = currencyFormat(updatedPrice);
 
-    // Update the cartProducts array with the new quantity
     const updatedCartProducts = cartProducts.map(product => {
-        if (product.id === +productId) {
+        if (product.id === Number(productId)) {
             return {
                 ...product,
                 quantity: currentQuantity,
-            };
+            }
         }
         return product;
     });
 
-    console.log(updatedCartProducts);
     cartProducts = updatedCartProducts;
 
-    // Update the total display
+    updateCartData(cartProducts);
+
     showCartTotal();
 }
 
-function getLocalStorageIDs() {
-    const cartIDs = JSON.parse(localStorage.getItem('cart')) || [];
-    return cartIDs;
+function deleteCartItem(event) {
+    const cartItem = event.currentTarget.closest('.cart-item');
+    const productId = cartItem.dataset.id;
+    const cartData = getCartData();
+
+    const updatedCartData = cartData.filter(product => product.id !== Number(productId));
+    localStorage.setItem('cart', JSON.stringify(updatedCartData));
+
+    cartProducts = updatedCartData;
+    showCartProducts();
+    showCartTotal();
 }
 
-/* 
-Gonna Store ID of products on localStorage; 
-Whenever user wants to add item to the cart;
-Just go through 'products list' find by id and show in cart page;
---- 
-For now that we don't have backend Its way easier, than storing all info about each product in localStorage;
-*/
+//------ LocalStorage Helpers --------//
+function getCartData() {
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    return cartData;
+}
+
+function updateCartData(updatedCartData) {
+    localStorage.setItem('cart', JSON.stringify(updatedCartData));
+}

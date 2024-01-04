@@ -106,11 +106,13 @@ searchInput.addEventListener('input', searchFirter)
 
 function addToCart(event) {
     const productId = event.currentTarget.closest('.cart-icon').dataset.id;
+    const product = products.find(product => product.id === Number(productId));
 
     const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    const isProductInCart = cartData.some(cartProduct => cartProduct.id === product.id);
 
-    if (!cartData.includes(productId)) {
-        cartData.push(productId);
+    if (!isProductInCart) {
+        cartData.push(product);
         localStorage.setItem('cart', JSON.stringify(cartData));
 
         Toastify({
