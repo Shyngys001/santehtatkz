@@ -78,8 +78,26 @@ function showCartTotal() {
             <span>Итого</span>
             <span>${currencyFormat(totalPrice)} ₸</span>
         </div>
-        <button>Заказать</button>
+        <button id="order-button">Заказать</button>
     `;
+
+    // Add an event listener to the "order-button" to show the modal
+    const orderButton = document.getElementById('order-button');
+    orderButton.addEventListener('click', function () {
+        // Display the modal
+        const orderModal = document.getElementById('orderModal');
+        orderModal.style.display = 'block';
+    });
+
+    // Add event listener for form submission
+    const orderForm = document.getElementById('orderForm');
+    orderForm.addEventListener('submit', function (event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Call the separate function to handle form submission
+        submitOrderForm();
+    });
 }
 
 function useCounter(button) {
@@ -131,6 +149,22 @@ function deleteCartItem(event) {
     cartProducts = updatedCartData;
     showCartProducts();
     showCartTotal();
+}
+
+function submitOrderForm() {
+    // Grab all form inputs
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const deliveryType = document.getElementById('deliveryType').value;
+    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+    const comments = document.getElementById('comments').value;
+
+    // Now you can use the grabbed values as needed (e.g., submit them via AJAX)
+
+    // Close the modal after form submission (if needed)
+    const orderModal = document.getElementById('orderModal');
+    orderModal.style.display = 'none';
 }
 
 //------ LocalStorage Helpers --------//

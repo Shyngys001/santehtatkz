@@ -90,21 +90,63 @@
     </div>
 
     <div class="container">
-
         <h1 class="text-center">Корзина</h1>
-
         <div class="cart-container">
             <div class="cart-left-side">
                 <h3 class="cart-left-side-header">Ваша Корзина</h3>
                 <div class="cart-items"></div>
             </div>
-            <div class="cart-right-side">
-
-            </div>
-
+            <div class="cart-right-side"></div>
         </div>
     </div>
 
+    <div class="container">
+        <div id="orderModal" class="modal">
+            <div class="modal-content">
+                <form class="form-container">
+                    <div class="flex items-center justify-center flex-col">
+                        <div class="form-container-title">Контактные данные</div>
+                        <div class="flex flex-col gap-4 w-[350px]">
+                            <input type="text" class="form-input" name="userName" placeholder="Ваше имя" required="">
+                            <input type="text" class="form-input" name="userPhone" placeholder="Ваш номер">
+                            <input type="text" class="form-input" name="userAddress" placeholder="Ваш адрес доставки"
+                                required="">
+                            <div class="input-radios mt-3">
+                                <div class="form-radio-label">
+                                    <input type="radio" class="w-4 h-4" name="deliver" id="pickup" required=""
+                                        value="Самовывоз">
+                                    <label for="pickup">Самовывоз</label>
+                                </div>
+                                <div class="form-radio-label">
+                                    <input type="radio" class="w-4 h-4" name="deliver" id="delivery" required=""
+                                        value="Доставка курьером 600 тнг">
+                                    <label for="delivery">Доставка курьером 600 тнг</label>
+                                </div>
+                            </div>
+                            <div class="input-radios">
+                                <h4>Какой вариант оплаты вам удобен?</h4>
+                                <div class="form-radio-label">
+                                    <input type="radio" name="payment" id="cash" required="" value="Наличка">
+                                    <label for="cash">Наличка</label>
+                                </div>
+                                <div class="form-radio-label">
+                                    <input type="radio" name="payment" id="credit-card" required=""
+                                        value="Банковская карта">
+                                    <label for="credit-card">Банковская карта</label>
+                                </div>
+                            </div>
+                            <div class="form-comment">
+                                <h4 class="mt-2 mb-1">Комментарий к заказу</h4>
+                                <textarea name="userComment" class="form-input resize-none" rows="5"
+                                    placeholder="Напишите сюда свои дополнительные пожелания"></textarea>
+                            </div>
+                        </div>
+                        <button class="form-button">Оформить заказ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!--- #BACK TO TOP -->
     <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
