@@ -8,6 +8,7 @@ import {
 const cartItems = document.querySelector('.cart-items');
 const cartContainer = document.querySelector('.cart-container');
 const modalOverlay = document.getElementById('orderModal');
+const URL = 'https://wa.me/+77479894879?text=';
 
 let cartProducts = null;
 
@@ -93,11 +94,7 @@ function showCartTotal() {
 
     // Add an event listener to the submit button
     const submitButton = document.querySelector('.form-button');
-    submitButton.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        submitOrderForm();
-    });
+    submitButton.addEventListener('click', submitOrderForm);
 }
 
 function useCounter(button) {
@@ -168,28 +165,36 @@ function submitOrderForm() {
     const userPhoneInput = document.querySelector('.form-input[name="userPhone"]');
     const userAddressInput = document.querySelector('.form-input[name="userAddress"]');
 
-    const deliverOptions = document.querySelectorAll('.input-radios[name="deliver"]');
+    // Deliver Options;
+    const deliverOptions = document.querySelectorAll('[name="deliver"]');
     const selectedDeliverOption = Array.from(deliverOptions).find(option => option.checked);
     const deliverValue = selectedDeliverOption ? selectedDeliverOption.value : '';
 
-    const paymentOptions = document.querySelectorAll('.input-radios[name="payment"]');
+    // Payment Options;
+    const paymentOptions = document.querySelectorAll('[name="payment"]');
     const selectedPaymentOption = Array.from(paymentOptions).find(option => option.checked);
     const paymentValue = selectedPaymentOption ? selectedPaymentOption.value : '';
 
+    // User Optional Comment;
     const userCommentTextarea = document.querySelector('.form-comment textarea[name="userComment"]');
 
-    // Now you can use these values as needed (e.g., submit them via AJAX)
-    console.log('User Name:', userNameInput.value);
-    console.log('User Phone:', userPhoneInput.value);
-    console.log('User Address:', userAddressInput.value);
-    console.log('Delivery Option:', deliverValue);
-    console.log('Payment Option:', paymentValue);
-    console.log('User Comment:', userCommentTextarea.value);
+    // All Values;
+    const userName = userNameInput.value;
+    const userPhone = userPhoneInput.value;
+    const userAddress = userAddressInput.value;
+    const userComment = userCommentTextarea.value;
 
-    // You can add your AJAX submission logic here
+    const cart = getCartData();
+    console.log(cart);
+    const productsName = cart.map((item, inx) => `   *${inx + 1}) ${item.name} :* _${item.quantity}${item.unit}/${currencyFormat(+item.price * item.quantity)}_`).join('%0a');
+    console.log(productsName);
 
-    // Optionally, you can reset the form after submission
-    resetForm();
+    // Validate Form;
+    if (validateFormFields(userName, userPhone, userAddress, deliverValue, paymentValue)) {
+        const message = `*· Имя :* ${userName}%0a*· Номер :* ${userPhone}%0a*· Адрес :* ${userAddress}%0a%0a*· Способ получения :* ${deliverValue}%0a*· Способ оплаты :* ${paymentValue}%0a*· Список товаров :* %0a${productsName}%0a%0a${userComment ? `*· Комментарий к заказу :* _${userComment}_` : ''}%0a%0a*· Итого :* _${currencyFormat(getTotalPrice(cart))}_%0a`
+
+        window.open(URL + message, '_blank');
+    }
 }
 
 function resetForm() {
@@ -205,6 +210,19 @@ function resetForm() {
     paymentOptions.forEach(option => option.checked = false);
 
     document.querySelector('.form-comment textarea[name="userComment"]').value = '';
+}
+
+function validateFormFields(userName, userPhone, userAddress, deliverValue, paymentValue) {
+    if (userName.trim() === '' ||
+        userPhone.trim() === '' ||
+        userAddress.trim() === '' ||
+        !deliverValue ||
+        !paymentValue
+    ) {
+        return false;
+    }
+
+    return true;
 }
 
 //? Modal Window;
