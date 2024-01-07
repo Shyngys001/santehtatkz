@@ -7,6 +7,8 @@ import {
 
 const cartItems = document.querySelector('.cart-items');
 const cartContainer = document.querySelector('.cart-container');
+const modalOverlay = document.getElementById('orderModal');
+
 let cartProducts = null;
 
 loadCartData();
@@ -86,16 +88,14 @@ function showCartTotal() {
     orderButton.addEventListener('click', function () {
         // Display the modal
         const orderModal = document.getElementById('orderModal');
-        orderModal.style.display = 'block';
+        orderModal.style.display = 'flex';
     });
 
-    // Add event listener for form submission
-    const orderForm = document.getElementById('orderForm');
-    orderForm.addEventListener('submit', function (event) {
-        // Prevent the default form submission
+    // Add an event listener to the submit button
+    const submitButton = document.querySelector('.form-button');
+    submitButton.addEventListener('click', function (event) {
         event.preventDefault();
 
-        // Call the separate function to handle form submission
         submitOrderForm();
     });
 }
@@ -151,22 +151,6 @@ function deleteCartItem(event) {
     showCartTotal();
 }
 
-function submitOrderForm() {
-    // Grab all form inputs
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const address = document.getElementById('address').value;
-    const deliveryType = document.getElementById('deliveryType').value;
-    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
-    const comments = document.getElementById('comments').value;
-
-    // Now you can use the grabbed values as needed (e.g., submit them via AJAX)
-
-    // Close the modal after form submission (if needed)
-    const orderModal = document.getElementById('orderModal');
-    orderModal.style.display = 'none';
-}
-
 //------ LocalStorage Helpers --------//
 function getCartData() {
     const cartData = JSON.parse(localStorage.getItem('cart')) || [];
@@ -175,4 +159,65 @@ function getCartData() {
 
 function updateCartData(updatedCartData) {
     localStorage.setItem('cart', JSON.stringify(updatedCartData));
+}
+
+//? Submit Form;
+function submitOrderForm() {
+    // Grab all form inputs
+    const userNameInput = document.querySelector('.form-input[name="userName"]');
+    const userPhoneInput = document.querySelector('.form-input[name="userPhone"]');
+    const userAddressInput = document.querySelector('.form-input[name="userAddress"]');
+
+    const deliverOptions = document.querySelectorAll('.input-radios[name="deliver"]');
+    const selectedDeliverOption = Array.from(deliverOptions).find(option => option.checked);
+    const deliverValue = selectedDeliverOption ? selectedDeliverOption.value : '';
+
+    const paymentOptions = document.querySelectorAll('.input-radios[name="payment"]');
+    const selectedPaymentOption = Array.from(paymentOptions).find(option => option.checked);
+    const paymentValue = selectedPaymentOption ? selectedPaymentOption.value : '';
+
+    const userCommentTextarea = document.querySelector('.form-comment textarea[name="userComment"]');
+
+    // Now you can use these values as needed (e.g., submit them via AJAX)
+    console.log('User Name:', userNameInput.value);
+    console.log('User Phone:', userPhoneInput.value);
+    console.log('User Address:', userAddressInput.value);
+    console.log('Delivery Option:', deliverValue);
+    console.log('Payment Option:', paymentValue);
+    console.log('User Comment:', userCommentTextarea.value);
+
+    // You can add your AJAX submission logic here
+
+    // Optionally, you can reset the form after submission
+    resetForm();
+}
+
+function resetForm() {
+    // Reset input values and radio buttons
+    document.querySelector('.form-input[name="userName"]').value = '';
+    document.querySelector('.form-input[name="userPhone"]').value = '';
+    document.querySelector('.form-input[name="userAddress"]').value = '';
+
+    const deliverOptions = document.querySelectorAll('.input-radios[name="deliver"]');
+    deliverOptions.forEach(option => option.checked = false);
+
+    const paymentOptions = document.querySelectorAll('.input-radios[name="payment"]');
+    paymentOptions.forEach(option => option.checked = false);
+
+    document.querySelector('.form-comment textarea[name="userComment"]').value = '';
+}
+
+//? Modal Window;
+modalOverlay.addEventListener('click', function (event) {
+    // Check if the clicked element is the modal overlay itself (not its children)
+    if (event.target === modalOverlay) {
+        // Close the modal
+        closeModal();
+    }
+});
+
+// Function to close the modal
+function closeModal() {
+    const orderModal = document.getElementById('orderModal');
+    orderModal.style.display = 'none';
 }
