@@ -7,6 +7,7 @@ span{
     margin-top: 2em;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .about-info .left{
@@ -31,7 +32,8 @@ span{
 }
 
 .about-info img{
-    max-width: 400px;
+    max-width: 900px;
+    width: 700px;
     border-radius: 7px;
 }
 
