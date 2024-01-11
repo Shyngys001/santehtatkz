@@ -49,6 +49,10 @@ span{
     /* width: 400px; */
 }
 
+#about-info-img2 {
+    margin: 0 auto;
+}
+
 .values{
     margin-top: 2em;
     font-size: 1.7em;
