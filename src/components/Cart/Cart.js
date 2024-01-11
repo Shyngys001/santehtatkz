@@ -197,21 +197,6 @@ function submitOrderForm() {
     }
 }
 
-function resetForm() {
-    // Reset input values and radio buttons
-    document.querySelector('.form-input[name="userName"]').value = '';
-    document.querySelector('.form-input[name="userPhone"]').value = '';
-    document.querySelector('.form-input[name="userAddress"]').value = '';
-
-    const deliverOptions = document.querySelectorAll('.input-radios[name="deliver"]');
-    deliverOptions.forEach(option => option.checked = false);
-
-    const paymentOptions = document.querySelectorAll('.input-radios[name="payment"]');
-    paymentOptions.forEach(option => option.checked = false);
-
-    document.querySelector('.form-comment textarea[name="userComment"]').value = '';
-}
-
 function validateFormFields(userName, userPhone, userAddress, deliverValue, paymentValue) {
     if (userName.trim() === '' ||
         userPhone.trim() === '' ||
