@@ -8,6 +8,7 @@
     <title>О Нас | SantehTAT</title>
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./src/components/About/About.css">
 </head>
 
 <body>
@@ -68,25 +69,71 @@
             </div>
             <ul class="navbar-list">
                 <li>
-                    <a href="/" class="navbar-link" data-nav-link>Главная</a>
+                    <a href="index.html" class="navbar-link" data-nav-link>Главная</a>
                 </li>
                 <li>
-                    <a href="/products.html" class="navbar-link" data-nav-link>Товары</a>
+                    <a href="products.html" class="navbar-link" data-nav-link>Товары</a>
                 </li>
                 <li>
-                    <a href="/how-order.html" class="navbar-link" data-nav-link>Как заказать?</a>
+                    <a href="how-order.html" class="navbar-link" data-nav-link>Как заказать?</a>
                 </li>
                 <li>
-                    <a href="/about.html" class="navbar-link" data-nav-link>О Нас</a>
+                    <a href="contact.html" class="navbar-link" data-nav-link>Магазины</a>
+                </li>
+                <li>
+                    <a href="about.html" class="navbar-link" data-nav-link>О Нас</a>
                 </li>
             </ul>
         </div>
         <div class="overlay" data-nav-toggler data-overlay></div>
     </div>
 
-    <h1 class="text-center">О Нас</h1>
+    <div class="container">
+        <h1 class="text-center">О <span>Нас</span></h1>
+
+        <div class="about-info">
+            <div class="left">
+                <img src="./assets/images/banner-3.jpg" alt="IMG">
+            </div>
+            <div class="right">
+                <h3>Инженерная сантехника <br> высшего качества с 2013 года</h3>
+                <p>
+                    С признанием качества и профессионализма, компания ТОО "Топ Азия Трейд" занимается поставками
+                    инженерной
+                    сантехники с 2013 года, став лидером в отрасли. Наш фирменный след простирается по всему Казахстану,
+                    охватывая ключевые регионы: Алматы, Астана, Шымкент, Актобе, Атырау, Уральск, Актау, где расположены
+                    наши 7 филиалов с офисами и современными складскими комплексами.
+                </p>
+            </div>
+        </div>
+        <div class="about-info">
+            <div class="left">
+                <img src="./assets/images/banner-1.jpg" alt="IMG">
+            </div>
+            <div class="right">
+                <h3>Качество и надежность <br> в каждом продукте</h3>
+                <p>
+                    Мы гордимся тем, что предоставляем нашим клиентам только самые высококачественные и
+                    сертифицированные продукты от ведущих отечественных и зарубежных производителей. Наш ассортимент
+                    насчитывает более 2000 наименований товаров, созданных на современных высокотехнологичных
+                    производствах, что гарантирует не только надежность, но и долговечность продукции.
+                </p>
+            </div>
+        </div>
+
+        <div class="values">
+            <h3>Наши ценности</h3>
+        </div>
+    </div>
 
 
+
+    <!--- #BACK TO TOP -->
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <script src="./assets/js/common.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
