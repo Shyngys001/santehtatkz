@@ -8,6 +8,7 @@ span{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    
 }
 
 .about-info .left{
@@ -32,8 +33,8 @@ span{
 }
 
 .about-info img{
-    max-width: 900px;
-    width: 700px;
+    max-width: 400px;
+    width: 800px;
     border-radius: 7px;
 }
 
@@ -111,4 +112,9 @@ span{
     font-size: calc(1vw + 5px);
     color: var(--spanish-gray);
   }
+  .about-info img{
+    max-width: 300px;
+    width: 800px;
+    border-radius: 7px;
+}
   }
