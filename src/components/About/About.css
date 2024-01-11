@@ -12,7 +12,7 @@ span{
 .about-info .left{
     flex: 1;
 }
-
+    
 .about-info .right{
     flex: 1;
 }
@@ -52,3 +52,48 @@ span{
     font-weight: 500;
     color: #000;
 }
+
+
+
+.process {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .process-block {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: transparent;
+    border-radius: 7px;
+    border: solid var(--black_70) 1px;
+  }
+  
+  .process-block h3 {
+    margin: 6px 0;
+    font-size: calc(1vw + 10px);
+  }
+  
+  .process p {
+    font-size: calc(1vw + 3px);
+    color: var(--spanish-gray);
+  }
+
+  .process-block:hover span {
+    color: var(--primary-color);
+  }
+  
+  .process span {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    font-size: calc(1vw + 25px);
+    color: var(--primary);
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .process {
+      grid-template-columns: 1fr;
+    }
+  }
