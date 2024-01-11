@@ -118,3 +118,9 @@ span{
     border-radius: 7px;
 }
   }
+
+@media screen and (max-width: 700px) {
+  .left img {
+    margin: 0 auto;
+  }
+}
