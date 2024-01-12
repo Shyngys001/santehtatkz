@@ -127,4 +127,7 @@ span{
   .left img {
     margin: 0 auto;
   }
+  .process-block span {
+    color: var(--primary-color);
+  }
 }
