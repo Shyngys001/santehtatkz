@@ -21,7 +21,7 @@ span{
 
 .about-info .right h3 {
     color: #000;
-    font-size: 1.7em;
+    font-size: 1.5em;
     line-height: 1.3;
     font-weight: 500;
     margin-bottom: .4em;
@@ -29,7 +29,7 @@ span{
 
 .about-info .right p {
     line-height: 2;
-    font-size: 1.07em;
+    font-size: 1em;
 }
 
 .about-info img{
@@ -113,7 +113,7 @@ span{
   }
   
   .process p {
-    font-size: calc(1vw + 5px);
+    font-size: calc(1vw + 6px);
     color: var(--spanish-gray);
   }
   .about-info img{
@@ -130,4 +130,8 @@ span{
   .process-block span {
     color: var(--primary-color);
   }
+  .about-info .right p {
+    line-height: 2;
+    font-size: 0.8em;
+}
 }
