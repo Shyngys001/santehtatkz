@@ -37,7 +37,8 @@
         color: var(--primary-color);
         border: 1px solid var(--primary-color);
         border-radius: 7px;
-
+        margin: 0 auto;
+        font-size: calc(1vw + 4px);
         &.active {
             background-color: var(--primary-color);
             color: var(--white);
@@ -179,3 +180,4 @@
     }
   }
       
+
