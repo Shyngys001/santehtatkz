@@ -75,11 +75,11 @@ function showCartTotal() {
     cartRightSide.innerHTML = `
         <div class="flex">
             <span>Товары, ${totalProducts} шт.</span>
-            <span>${currencyFormat(totalPrice)} ₸</span>
+            <span>${currencyFormat(totalPrice)} </span>
         </div>
         <div class="flex">
             <span>Итого</span>
-            <span>${currencyFormat(totalPrice)} ₸</span>
+            <span>${currencyFormat(totalPrice)} </span>
         </div>
         <button id="order-button">Заказать</button>
     `;
