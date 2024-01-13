@@ -107,6 +107,7 @@
             .product-details-bottom{
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
             }
         }
     
@@ -210,7 +211,7 @@
 .product-container{
     margin-top: 2em;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     flex-wrap: wrap;
     gap: 5px;
@@ -218,7 +219,7 @@
     > .product-card {
         cursor: pointer;
         position: relative;
-        width:110px;
+        width:150px;
         height: 170px;
         border: 1px solid #ccc;
         border-radius: 7px;
@@ -230,9 +231,9 @@
         }
     
         .product-image {
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
-            height: 60px;
+            height: 90px;
             object-fit: contain;
         }
     
