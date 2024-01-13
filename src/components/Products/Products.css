@@ -48,7 +48,8 @@
 
 .product-container{
     margin-top: 2em;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     justify-content: center;
     flex-wrap: wrap;
     gap: 25px;
@@ -56,8 +57,8 @@
     > .product-card {
         cursor: pointer;
         position: relative;
-        width: 270px;
-        height: 350px;
+        width: 170px;
+        height: 250px;
         border: 1px solid #ccc;
         border-radius: 7px;
         overflow: hidden;
@@ -69,7 +70,8 @@
     
         .product-image {
             width: 100%;
-            height: 250px;
+            margin: 0 auto;
+            height: 150px;
             object-fit: contain;
         }
     
@@ -181,3 +183,105 @@
   }
 
   
+
+  
+@media screen and (max-width: 1100px) {
+    .product-container{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+  }
+
+    
+@media screen and (max-width: 990px) {
+    .product-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    .product-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    
+.product-container{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    
+    > .product-card {
+        cursor: pointer;
+        position: relative;
+        width:110px;
+        height: 170px;
+        border: 1px solid #ccc;
+        border-radius: 7px;
+        overflow: hidden;
+        transition: all .4s ease;
+    
+        &:hover {
+            transform: scale(1.05);
+        }
+    
+        .product-image {
+            width: 90%;
+            margin: 0 auto;
+            height: 60px;
+            object-fit: contain;
+        }
+    
+        .product-details {
+            padding: 15px;
+    
+            .product-name {
+                font-size:1rem;
+                margin: 0;
+            }
+    
+            .product-price {
+                margin: 8px 0;
+                font-size: 1rem;
+            }
+    
+            .cart-icon {
+                opacity: 1;
+                background-color: var(--primary-color);
+                border-radius: 7px;
+                transition: opacity 0.3s;
+                display: flex;
+                align-items: center;
+                height: 25px;
+                font-size: 15px;
+
+                ion-icon {
+                    color: var(--white);
+                    font-size: 1px; 
+                }
+
+                &:hover{
+                    background-color: var(--primary-color-hover);
+                }
+            }
+
+            .product-details-bottom{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    
+        &:hover {
+            color: var(--primary-color);
+        }
+
+        &.hide{
+            display: none;
+        }
+    }
+}
+  }
