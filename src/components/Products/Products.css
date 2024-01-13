@@ -210,11 +210,13 @@
     
 .product-container{
     margin-top: 2em;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     flex-wrap: wrap;
     gap: 5px;
+    margin: 0 auto;
+    
     
     > .product-card {
         cursor: pointer;
