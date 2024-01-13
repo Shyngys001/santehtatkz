@@ -249,7 +249,7 @@
     
             .product-price {
                 margin: 8px 0;
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
     
             .cart-icon {
@@ -260,7 +260,7 @@
                 display: flex;
                 align-items: center;
                 height: 25px;
-                font-size: 15px;
+                font-size: 20px;
 
                 ion-icon {
                     color: var(--white);
