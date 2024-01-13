@@ -214,8 +214,8 @@
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     flex-wrap: wrap;
-    gap: 5px;
-    margin: 0 auto;
+    gap: 10px;
+    margin: 10 auto;
     
     
     > .product-card {
