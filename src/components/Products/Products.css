@@ -39,7 +39,7 @@
 
 .categories::-webkit-scrollbar {
     width: 0px; /* For WebKit browsers */
-    height: 2px;
+    height: 5px;
 }
 
 .categories::-webkit-scrollbar-thumb {
