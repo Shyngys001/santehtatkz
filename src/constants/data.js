@@ -120,30 +120,6 @@ export const products = [
         quantity: 1,
         category: 'Фитинги'
     },
-    {
-        id: 11,
-        name: 'Шапан',
-        price: '500',
-        unit: 'шт',
-        image: 'https://avatars.mds.yandex.net/i?id=9620b380ef6561970c0118e9efedf65adfee3318-10414372-images-thumbs&n=13',
-        hasDiscount: true,
-        isNew: false,
-        bestseller: true,
-        quantity: 1,
-        category: 'Фитинги'
-    },
-    {
-        id: 12,
-        name: 'Шапан',
-        price: '500',
-        unit: 'шт',
-        image: 'https://avatars.mds.yandex.net/i?id=9620b380ef6561970c0118e9efedf65adfee3318-10414372-images-thumbs&n=13',
-        hasDiscount: true,
-        isNew: false,
-        bestseller: true,
-        quantity: 1,
-        category: 'Beka'
-    },
 ];
 
 //! Actual Data will be added here;
