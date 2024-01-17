@@ -26,24 +26,18 @@ const createNewProductsCard = (listOfProducts, listElement) => {
     return listElement.innerHTML +=
       `
         <li class="scrollbar-item">
-        <div class="shop-card">
+        <a class="shop-card" href="products.html">
           <div class="card-banner img-holder" style="--width: 540; --height: 720;">
             <img src="${item.image}" loading="lazy" alt="${item.name}" class="img-contain">
             ${item.hasDiscount ? `<span class="badge" aria-label="20% off">-20%</span>` : ''}
-            <div class="card-actions">
-              <button class="action-btn" aria-label="add to cart">
-                <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-              </button>
-            </div>
           </div>
           <div class="card-content">
             <h3><a href="products.html" class="card-title">${item.name}</a></h3>
             <div class="price">
-              ${item.hasDiscount ? `<del class="del">$${Number(item.price.replace(' ', '')) + 5000}</del>` : ''}
               <span class="span">${item.price}₸ (шт.)</span>
             </div>
           </div>
-        </div>
+        </a>
       </li>
     `
   })
