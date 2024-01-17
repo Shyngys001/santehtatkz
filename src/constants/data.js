@@ -121,19 +121,3 @@ export const products = [
         category: 'Фитинги'
     },
 ];
-
-//! Actual Data will be added here;
-export const data = [
-    {
-        productName: "Regular White T-Shirt",
-        category: "Topwear",
-        price: "30",
-        image: "white-tshirt.jpg",
-    },
-    {
-        productName: "Beige Short Skirt",
-        category: "Bottomwear",
-        price: "49",
-        image: "short-skirt.jpg",
-    },
-];
