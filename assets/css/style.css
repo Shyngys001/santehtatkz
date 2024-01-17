@@ -833,6 +833,7 @@ body {
 .footer {
   background-color: var(--cultured-1);
   padding-block: 70px;
+  margin-top: 5em;
 }
 
 .footer-top {
