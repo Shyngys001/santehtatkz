@@ -1,3 +1,4 @@
+import { citiesData } from "../../constants/data.js";
 import {
     isEmptyArray,
     getTotalPrice,
@@ -185,14 +186,13 @@ function submitOrderForm() {
     const userComment = userCommentTextarea.value;
 
     const cart = getCartData();
-    console.log(cart);
     const productsName = cart.map((item, inx) => `   *${inx + 1}) ${item.name} :* _${item.quantity}${item.unit}/${currencyFormat(+item.price * item.quantity)}_`).join('%0a');
-    console.log(productsName);
-
     // Validate Form;
     if (validateFormFields(userName, userPhone, userAddress, deliverValue, paymentValue)) {
+        const phoneNumber = citiesData.get(userAddress);
         const message = `*· Имя :* ${userName}%0a*· Номер :* ${userPhone}%0a*· Адрес :* ${userAddress}%0a%0a*· Способ получения :* ${deliverValue}%0a*· Способ оплаты :* ${paymentValue}%0a*· Список товаров :* %0a${productsName}%0a%0a${userComment ? `*· Комментарий к заказу :* _${userComment}_` : ''}%0a%0a*· Итого :* _${currencyFormat(getTotalPrice(cart))}_%0a`
 
+        const URL = `https://wa.me/${phoneNumber}?text=`;
         window.open(URL + message, '_blank');
     }
 }
