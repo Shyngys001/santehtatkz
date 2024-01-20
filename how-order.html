@@ -8,6 +8,9 @@
     <title>SantehTAT</title>
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./src/components/Products/Products.css">
+    <link rel="stylesheet" href="./src/utils/notify.css">
+    <link rel="stylesheet" href="./src/components/how/howorder.css">
 </head>
 
 <body>
@@ -55,11 +58,255 @@
             </div>
         </div>
     </header>
+    <!--- #MOBILE NAVBAR-->
+    <div class="sidebar">
+        <div class="mobile-navbar" data-navbar>
+            <div class="wrapper">
+                <a href="#" class="logo">
+                    <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
+                </a>
+                <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                    <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+            </div>
+            <ul class="navbar-list">
+                <li>
+                    <a href="/index.html" class="navbar-link" data-nav-link>Главная</a>
+                </li>
+                <li>
+                    <a href="/products.html" class="navbar-link" data-nav-link>Товары</a>
+                </li>
+                <li>
+                    <a href="/how-order.html" class="navbar-link" data-nav-link>Как заказать?</a>
+                </li>
+                <li>
+                    <a href="/contact.html" class="navbar-link has-after">Магазины</a>
+                </li>
+                <li>
+                    <a href="/about.html" class="navbar-link" data-nav-link>О Нас</a>
+                </li>
+            </ul>
+        </div>
+        <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
 
     <h1 class="text-center">Как заказать?</h1>
+    <div class="background"></div>
+    <div class="background-texture"></div>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <section class="carousel">
+      <h2 class="categories__title">Процесс заказа</h2>
+      <div class="carousel__container">
+        <div class="carousel-item">
+          <img
+            class="carousel-item__img"
+            src="/assets/images/how-order/1.svg"
+            alt="people"
+          />
+          <div class="carousel-item__details">
+            <div class="controls">
+              <span class="fas fa-play-circle"></span>
+              <span class="fas fa-plus-circle"></span>
+            </div>
+            <h5 class="carousel-item__details--title">Шаг 1</h5>
+            <h6 class="carousel-item__details--subtitle">Зайдите в товары</h6>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            class="carousel-item__img"
+            src="/assets/images/how-order/2.svg"
+            alt="people"
+          />
+          <div class="carousel-item__details">
+            <div class="controls">
+              <span class="fas fa-play-circle"></span>
+              <span class="fas fa-plus-circle"></span>
+            </div>
+            <h5 class="carousel-item__details--title">Шаг 2</h5>
+            <h6 class="carousel-item__details--subtitle">Выберите нужную категорию</h6>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            class="carousel-item__img"
+            src="/assets/images/how-order/3.svg"
+            alt="people"
+          />
+          <div class="carousel-item__details">
+            <div class="controls">
+              <span class="fas fa-play-circle"></span>
+              <span class="fas fa-plus-circle"></span>
+            </div>
+            <h5 class="carousel-item__details--title">Шаг 3</h5>
+            <h6 class="carousel-item__details--subtitle">Добавьте в корзину</h6>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            class="carousel-item__img"
+            src="/assets/images/how-order/4.svg"
+            alt="people"
+          />
+          <div class="carousel-item__details">
+            <div class="controls">
+              <span class="fas fa-play-circle"></span>
+              <span class="fas fa-plus-circle"></span>
+            </div>
+            <h5 class="carousel-item__details--title">Шаг 4</h5>
+            <h6 class="carousel-item__details--subtitle">Зайдите в корзину</h6>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            class="carousel-item__img"
+            src="/assets/images/how-order/5.svg"
+            alt="people"
+          />
+          <div class="carousel-item__details">
+            <div class="controls">
+              <span class="fas fa-play-circle"></span>
+              <span class="fas fa-plus-circle"></span>
+            </div>
+            <h5 class="carousel-item__details--title">Шаг 5</h5>
+            <h6 class="carousel-item__details--subtitle">Закажите</h6>
+          </div>
+        </div>
+        <div class="carousel-item">
+            <img
+              class="carousel-item__img"
+              src="/assets/images/how-order/6.svg"
+              alt="people"
+            />
+            <div class="carousel-item__details">
+              <div class="controls">
+                <span class="fas fa-play-circle"></span>
+                <span class="fas fa-plus-circle"></span>
+              </div>
+              <h5 class="carousel-item__details--title">Шаг 6</h5>
+              <h6 class="carousel-item__details--subtitle">Заполните форму и оформите заказ</h6>
+            </div>
+          </div>
+          
+      </div>
+    </section>
+        <!--- #FOOTER -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-top">
+                    <ul class="footer-list">
+                        <li>
+                            <p class="footer-list-title">Company</p>
+                        </li>
+                        <li>
+                            <p class="footer-list-text">
+                                Найдите ближайший к вам магазин. <a href="#" class="link">Посмотреть наши магазины.</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="footer-list-text bold">+7 771 731 28 48</p>
+                        </li>
+                        <li>
+                            <p class="footer-list-text">info@santehtat.kz</p>
+                        </li>
+                    </ul>
+                    <ul class="footer-list">
+                        <li>
+                            <p class="footer-list-title">Useful links</p>
+                        </li>
+                        <li>
+                            <a href="index.html" class="footer-link">Главная</a>
+                        </li>
+                        <li>
+                            <a href="how-order.html" class="footer-link">Как заказать?</a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="footer-link">О компании</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="footer-link">Контакты</a>
+                        </li>
+                    </ul>
+    
+                    <ul class="footer-list">
+                        <li>
+                            <p class="footer-list-title">Infomation</p>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Доставка</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Оплата</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">Terms & Conditions</a>
+                        </li>
+                    </ul>
+    
+                    <div class="footer-list">
+                        <p class="newsletter-title">Good emails.</p>
+                        <p class="newsletter-text">
+                            Введите свой адрес электронной почты ниже, чтобы быть первым, кто узнает о новых коллекциях и
+                            запусках
+                            продуктов.
+                        </p>
+                        <form action="" class="newsletter-form">
+                            <input type="email" name="email_address" placeholder="Enter your email address" required
+                                class="email-field">
+    
+                            <button type="submit" class="btn btn-blue">Подписаться</button>
+                        </form>
+                    </div>
+                </div>
+    
+                <div class="footer-bottom">
+                    <a href="index.html" class="logo">
+                        <img src="./assets/images/logo.png" width="179" height="26" loading="lazy" alt="Glowing">
+                    </a>
+                    <div class="wrapper">
+                        <p class="copyright">
+                            &copy; 2023 MBD
+                        </p>
+                        <ul class="social-list">
+                            <li>
+                                <a href="#" class="social-link">
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="social-link">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="social-link">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="social-link">
+                                    <ion-icon name="logo-youtube"></ion-icon>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <!--- #BACK TO TOP -->
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!--- Custom JS link-->
+  <script src="./assets/js/common.js"></script>
+  <script type="module" src="./src/components/Home/Home.js"></script>
+  <!--Ionicon link-->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>
