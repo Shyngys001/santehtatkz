@@ -3,7 +3,7 @@
   width: 100%;
   overflow-x: scroll;
   padding: 30px;
-  padding-top: 80px;
+  padding-top: 10px;
   position: relative;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -11,7 +11,7 @@
 
 .carousel__container {
   white-space: nowrap;
-  margin: 70px 0px;
+  margin: 0px 0px;
   padding-bottom: 10px;
   display: inline-block;
 }
@@ -19,16 +19,44 @@
 .categories__title {
  color: rgb(77, 55, 102);
   font-size: 28px;
-  position: absolute;
-  padding-left: 30px;
+  margin: 0 auto;
+  width: 20%;
+  margin-top: 50px;
 }
+
+.categories__title {
+    width: 100px;
+    height: 30px;
+    border: 0;
+    animation: arrow 3s ease-in-out infinite;
+    cursor: pointer;
+    background: var(--primary-color);
+
+
+    &:hover {
+    background: var(--primary-color-hover)
+    }
+    
+    &:focus { outline: 0; }
+  }
+  
+  @keyframes arrow {
+    from, 10%, 90%, to {
+      -webkit-clip-path: polygon(0 25%, 75% 25%, 75% 0, 100% 50%, 75% 100%, 75% 75%, 0 75%, 0 50%);
+  clip-path: polygon(0 25%, 75% 25%, 75% 1%, 100% 50%, 75% 100%, 75% 75%, 0 75%, 0 50%);
+    }
+    40%, 60% {
+      -webkit-clip-path: polygon(25% 0, 25% 25%, 100% 25%, 100% 50%, 100% 75%, 25% 75%, 25% 100%, 0 50%);
+  clip-path: polygon(25% 1%, 25% 25%, 100% 25%, 100% 50%, 100% 75%, 25% 75%, 25% 100%, 0 50%);
+    }
+  }
 
 .carousel-item {
   width: 300px;
   height: 280px;
   border-radius: 20px;
   overflow: hidden;
-  margin-right: 10px;
+  margin-right: 100px;
   margin-top: 70px;
   display: inline-block;
   cursor: pointer;
