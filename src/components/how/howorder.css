@@ -14,9 +14,11 @@
     /* For WebKit browsers (Chrome, Safari) */
     &::-webkit-scrollbar {
       width: 12px;
+
     }
   
     &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
       background-color: var(--primary-color); /* Change this to your desired scrollbar color */
     }
   
