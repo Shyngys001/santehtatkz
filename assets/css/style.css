@@ -1284,7 +1284,8 @@ body {
 
   .header .search-submit ion-icon { --ionicon-stroke-width: 40px; }
 
-  .header .logo { margin-inline-end: 60px; }
+  .header .logo { margin-inline-end: 60px; width: 300px;}
+  .header .logo img{width: 220px;}
 
 
 
@@ -1312,8 +1313,13 @@ body {
 
   .navbar .navbar-list {
     display: flex;
-    justify-content: center;
-    gap: 45px;
+    justify-content: space-evenly;
+    /* gap: 45px; */
+    align-items: center
+  }
+
+  .logohide, .header-actionshide {
+    display: none;
   }
 
   .navbar .navbar-link {
@@ -1339,7 +1345,7 @@ body {
 
   .header-top.active .navbar {
     position: fixed;
-    top: -80px;
+    top: -130px;
     bottom: auto;
     padding-block: 28px;
     box-shadow: var(--shadow-1);
