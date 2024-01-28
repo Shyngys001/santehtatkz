@@ -1416,6 +1416,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 50px;
 }
 
 .data-card {
@@ -1433,7 +1434,7 @@ body {
   transition: transform .45s ease, background .45s ease;
   margin: 0 auto;
   border: 2px solid var(--primary-color);
-  
+
   
   h3 {
     color: #2E3C40;
