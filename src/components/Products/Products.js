@@ -140,3 +140,29 @@ function showCartCounter() {
 
     cartCounter.innerText = cartIDs.length;
 }
+
+//? Toggle Categories buttons;
+function toggleCategories() {
+    const categories = document.querySelector('.categories');
+    if (window.innerWidth <= 600) {
+        categories.style.display = (categories.style.display === 'flex') ? 'none' : 'flex';
+
+        document.querySelectorAll('.categories > .btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                categories.style.display = 'none';
+            });
+        });
+    }
+}
+
+document.querySelector('.category-button > h3').addEventListener('click', toggleCategories);
+
+window.addEventListener('resize', () => {
+    const h3 = document.querySelector('.category-button > h3');
+    if (window.innerWidth > 650) {
+        categories.style.display = 'flex';
+        h3.textContent = 'Категория'
+    } else {
+        h3.textContent = 'Фильтры'
+    }
+})

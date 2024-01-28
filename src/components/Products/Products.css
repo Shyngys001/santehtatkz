@@ -1,8 +1,9 @@
 .filter-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    width: 250px;
+    margin-right: 30px;
+    border-right: 1px solid #ccc;
 }
 
 .search-input {
@@ -12,7 +13,7 @@
     outline: none;
     transition: all .7s ease;
     border-radius: 7px;
-    margin-top: 2em;
+    margin: 2em auto;
 
     &:hover{  
         &::placeholder{
@@ -27,13 +28,9 @@
 
 .categories{
     display: flex;
-    margin-top: 2em;
-    gap: 10px;
     overflow-x: auto;
     white-space: nowrap;
-    width: 100%;
     scrollbar-width: thin;
-    padding-bottom: 10px;
 }
 
 
@@ -48,11 +45,10 @@
 
 .categories .btn {
     display: inline-block;
-    background-color: var(--white);
     color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    border-radius: 7px;
-    font-size: calc(1vw + 4px);
+    text-align: start;
+    padding: 2px 5px;
+    margin-top: 8px;
 }
 
 .categories .btn.active{
@@ -63,10 +59,11 @@
 .product-container {
     margin-top: 2em;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-content: center;
     flex-wrap: wrap;
     gap: 25px;
+    max-width: 950px;
   }
   
   .product-container > .product-card {
@@ -134,6 +131,7 @@
   .product-container > .product-card.hide {
     display: none;
   }
+
   
 
 #noItemFoundMessage{
@@ -222,7 +220,26 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    
+    .container.xl{
+      flex-direction: column;
+    }
+
+    .categories{
+      display: flex;
+      position: absolute;
+      z-index: 10;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 7px;
+    }
+    .categories{
+      display: none;
+    }
+    .category-button > h3 {
+      cursor: pointer;
+    }
+
 .product-container{
     margin-top: 2em;
     display: flex;
