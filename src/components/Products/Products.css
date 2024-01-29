@@ -238,6 +238,10 @@
     }
     .category-button > h3 {
       cursor: pointer;
+      border: solid 1px var(--primary-color);
+      border-radius: 5px;
+      width: 120px;
+      text-align: center;
     }
 
 .product-container{
