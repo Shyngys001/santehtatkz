@@ -25,3 +25,5 @@ export const currencyFormat = (number) => {
 
     return result.replace('KZT', '₸');
 }
+
+
