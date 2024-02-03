@@ -836,7 +836,7 @@ body {
 .footer .logo { display: none; }
 
 .footer {
-  background-color: var(--cultured-1);
+  background-color: var(--black_5);
   padding-block: 70px;
   margin-top: 5em;
 }
