@@ -588,6 +588,7 @@ body {
 .shop-card .card-banner {
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .shop-card .badge {
@@ -1743,7 +1744,26 @@ margin: 5px 0;
   height: 220px;
   display: flex;
   align-items: center;
+  padding: 20px;
 }
+
+.card-banner{
+  width: 150px;
+}
+.scrollbar-item {
+  min-width: 200px;
+}
+
+.carousel-item {
+  width: 200px;
+  height: 200px;
+}
+.carousel-item img {
+  width: 200px;
+  height: 200px;
+}
+
+
 }
 
 
@@ -1858,4 +1878,8 @@ margin: 5px 0;
     cursor: pointer;
   }
   
+  .play_video {
+    width: 80px;
+    height: 80px;
+  }
 }
