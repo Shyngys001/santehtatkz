@@ -130,6 +130,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 550px;
 }
 
 .h1,
@@ -1761,6 +1762,10 @@ margin: 5px 0;
 .carousel-item img {
   width: 200px;
   height: 200px;
+}
+
+.has-bg-image {
+  height: 350px;
 }
 
 
