@@ -432,7 +432,7 @@ body {
 .sidebar { z-index: 5; }
 
 .mobile-navbar {
-  background-color: var(--white);
+  background-color: var(--black);
   position: fixed;
   top: 0;
   left: 0;
@@ -467,7 +467,7 @@ body {
 .nav-close-btn ion-icon { --ionicon-stroke-width: 40px; }
 
 .mobile-navbar .navbar-link {
-  color: var(--black);
+  color: var(--white);
   font-size: var(--fs-8);
   text-transform: uppercase;
   font-weight: var(--fw-600);
