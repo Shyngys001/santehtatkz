@@ -1936,6 +1936,7 @@ margin: 5px 0;
     transform-style:preserve-3d;
     animation:rotate 35s linear infinite;
     margin-top: 50px;
+    margin-bottom: 100px;
   }
   .gallery span{
     position:absolute;
