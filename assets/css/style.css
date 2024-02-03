@@ -350,6 +350,7 @@ body {
 .header {
   position: relative;
   padding-block-end: 80px;
+  
 }
 
 .alert {
@@ -368,7 +369,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: var(--white);
+  background-color: var(--white_30);
   padding-block: 26px;
   z-index: 4;
 }
@@ -380,6 +381,7 @@ body {
   box-shadow: var(--shadow-1);
   transform: translateY(100%);
   transition: var(--transition-2);
+  
 }
 
 .header-top.header-hide {
@@ -836,7 +838,7 @@ body {
 .footer .logo { display: none; }
 
 .footer {
-  background-color: var(--black_5);
+  background-color: var(--black_10);
   padding-block: 70px;
   margin-top: 5em;
 }
