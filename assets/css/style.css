@@ -337,7 +337,9 @@ body {
   text-align: center;
 }
 
-
+.section.shop, .section.feature{
+  background-color: var(--black_5);
+}
 
 /*-----------------------------------*\
   #HEADER
