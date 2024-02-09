@@ -1,3 +1,44 @@
 .shop-card{
     cursor: pointer;
 }
+
+.section.brands ul {
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.section.brands ul > li{
+    width: 270px;
+    min-height: 115px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 25px #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section.brands ul.delivery > li{
+    width: 360px;
+    min-height: 142px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 25px #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.section.brands ul.delivery > li:nth-child(1){
+    background: #ECFDE8;
+}
+
+.section.brands ul.delivery > li:nth-child(2){
+    background: #F1E8FF;
+}
+
+.section.brands ul.delivery > li:nth-child(3){
+    background: #ECF4FF;
+}

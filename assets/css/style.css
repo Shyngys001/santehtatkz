@@ -338,7 +338,7 @@ body {
 }
 
 .section.shop, .section.feature{
-  background-color: var(--black_5);
+  /* background-color: var(--black_5); */
 }
 
 /*-----------------------------------*\
