@@ -572,6 +572,14 @@ body {
 
 
 
+/*-----------------------------------*\
+  #BRAND
+\*-----------------------------------*/
+.brands {
+  
+}
+
+
 
 
 /*-----------------------------------*\
@@ -592,7 +600,7 @@ body {
 .shop-card .card-banner {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .shop-card .badge {
@@ -651,6 +659,7 @@ body {
   color: var(--black);
   font-weight: var(--fw-700);
 }
+
 
 .shop-card .card-title {
   color: var(--black);

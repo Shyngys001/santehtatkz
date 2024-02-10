@@ -11,7 +11,7 @@ function showProductsList() {
         <div class="product-card" data-category="${product.category}">
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-details">
-                <h3 class="product-name">${product.name}</h3>
+                <h3 class="product-name" style="color: black">${product.name}</h3>
                 <div class="product-details-bottom">
                     <p class="product-price">${product.price}₸ (шт.)</p>
                     <div class="cart-icon" data-id="${product.id}">
