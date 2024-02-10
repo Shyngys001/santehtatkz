@@ -704,6 +704,7 @@ body {
 .banner-card {
   min-height: 420px;
   padding: 30px;
+  border-radius: 15px;
 }
 
 .banner-card .card-subtitle {
@@ -1549,14 +1550,14 @@ body {
 
 
 .carousel {
-  width: 100%;
+  width: 90%;
   overflow-x: scroll;
   padding: 30px;
   padding-top: 10px;
   position: relative;
+  margin: 0 auto;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: scroll;
   scrollbar-width: thin; /* For Firefox */
   scrollbar-color: #333333 #f0f0f0; /* For Firefox */
 
