@@ -21,12 +21,25 @@
     <div class="header-top" data-header>
       <div class="container">
 
+        <div class="top-header">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
+          </a>
+          <div class="header-actions">
+            <button class="header-action-btn" aria-label="cart item">
+              <a href="cart.html">
+                <ion-icon name="cart-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+                <span class="btn-badge">0</span>
+              </a>
+            </button>
+          </div>
+        </div>
+
         <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
           <span class="line line-1"></span>
           <span class="line line-2"></span>
           <span class="line line-3"></span>
         </button>
-
         <a href="#" class="logo logohide">
           <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
         </a>
@@ -40,15 +53,9 @@
         </div>
 
         <nav class="navbar">
-
           <ul class="navbar-list">
             <li>
-              <a href="#" class="logo">
-                <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
-              </a>
-            </li>
-            <li>
-              <a href="#" class="navbar-link has-after">Главная</a>
+              <a href="index.html" class="navbar-link has-after">Главная</a>
             </li>
             <li>
               <a href="products.html" class="navbar-link has-after">Товары</a>
@@ -61,16 +68,6 @@
             </li>
             <li>
               <a href="about.html" class="navbar-link has-after">О Нас</a>
-            </li>
-            <li>
-              <div class="header-actions">
-                <button class="header-action-btn" aria-label="cart item">
-                  <a href="cart.html">
-                    <ion-icon name="cart-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
-                    <span class="btn-badge">0</span>
-                  </a>
-                </button>
-              </div>
             </li>
           </ul>
         </nav>

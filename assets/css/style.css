@@ -352,7 +352,27 @@ body {
 .header {
   position: relative;
   padding-block-end: 80px;
-  
+}
+
+.navbar{
+  background-color: var(--primary-color) !important;
+}
+
+.top-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+@media (max-width: 768px){
+  .top-header{
+    display: none;
+  }
+}
+
+.navbar a {
+  color: white !important;
 }
 
 .alert {
@@ -1354,7 +1374,7 @@ body {
 
   .header-top.active .navbar {
     position: fixed;
-    top: -130px;
+    top: -90px;
     bottom: auto;
     padding-block: 28px;
     box-shadow: var(--shadow-1);
