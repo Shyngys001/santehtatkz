@@ -592,6 +592,11 @@ body {
 
 
 
+/*-----------------------------------*\
+  #BRAND
+\*-----------------------------------*/
+
+
 
 
 /*-----------------------------------*\
@@ -612,7 +617,7 @@ body {
 .shop-card .card-banner {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .shop-card .badge {
@@ -672,6 +677,7 @@ body {
   font-weight: var(--fw-700);
 }
 
+
 .shop-card .card-title {
   color: var(--black);
   font-size: var(--fs-7);
@@ -715,6 +721,7 @@ body {
 .banner-card {
   min-height: 420px;
   padding: 30px;
+  border-radius: 15px;
 }
 
 .banner-card .card-subtitle {
@@ -1560,14 +1567,14 @@ body {
 
 
 .carousel {
-  width: 100%;
+  width: 90%;
   overflow-x: scroll;
   padding: 30px;
   padding-top: 10px;
   position: relative;
+  margin: 0 auto;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: scroll;
   scrollbar-width: thin; /* For Firefox */
   scrollbar-color: #333333 #f0f0f0; /* For Firefox */
 
@@ -1786,8 +1793,6 @@ margin: 5px 0;
   width: 200px;
   height: 200px;
 }
-
-
 }
 
 
