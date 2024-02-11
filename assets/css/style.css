@@ -392,7 +392,6 @@ body {
   left: 0;
   width: 100%;
   background-color: var(--white_30);
-  padding-block: 26px;
   z-index: 4;
 }
 
@@ -1281,12 +1280,10 @@ body {
 
   .header {
     padding-block-end: 60px;
-    margin-block-end: 10px;
   }
 
   .header-top {
     position: unset;
-    padding-block: 24px 0;
   }
 
   .header-top:is(.active, .header-hide) { all: unset; }
