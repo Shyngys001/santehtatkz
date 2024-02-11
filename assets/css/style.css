@@ -530,9 +530,18 @@ body {
   background-color: var(--light-gray);
   /* padding: 100px 15px; */
   background-position: 40%;
-  border-radius: 25px;  display: flex;
+  display: flex;
   align-items: center;
   height: 500px;
+}
+
+.section.hero {
+  width: 100%;
+}
+
+.section.hero .container {
+  padding-inline: 0px;
+
 }
 
 .hero-text {
